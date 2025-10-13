@@ -112,7 +112,7 @@
       <p>Ever thought of completely automating your entire Data Conversions department? That is, automating the data extraction, transferring, transforming and loading through a completely hands-free pipeline? Since most DMSs need to convert CDKs data through a labourious and costly process of making reports by hand, or by having the client pay for a backup to be sent, you would have the advantage of a low-cost, reliable, and maintainable data pipeline that runs through robust code.</p>
       <p>Below is a demonstration of a technology which I have created in my free time. A quick summary of the process is: One: creates a custom HttpClient which can directly interact with CDK’s API when it is given nothing more than the client’s username and password. Two: create HttpRequests with parameters that mimic the CDK Drive functions (CDK Drive is the software that CDK runs on). Three: create and pull the files using the Url commands.</p>
       <p>Basically, this technology allows someone to scrap data from CDKs software as if it were a website, and gives full access to CDKs web information which would be used for display in CDK Drive.</p>
-      <div class="video-wrap" style="margin-top:12px">
+      <div class="video-wrap" style="margin-top:12px"; margin-bottom:12px>
         <video controls preload="metadata" style="width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--border); background:#000">
           <source src="DirectPullthroughPowershellCDKHTTPSDemo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -121,10 +121,11 @@
       <div class="media">
         <figure>
           <img src="screenshot-auth.png" alt="PowerShell authentication session with cookie token" />
-          <figcaption>A sample of the authentication through the command line with the customer's username and password. The cookie at the bottom is the successful authentication token here.</figcaption>
+          <figcaption>A sample of the authentication through the command line with the customer's username and password. The cookie shown in blud is the successful authentication token here.</figcaption>
         </figure>
         <figure>
           <img src="screenshot-cleanReportName.png" alt="Code snippet that cleans report names by stripping HTML tags and entities" />
+           <figcaption>A report cleaning function from the Javascript</figcaption>
         </figure>
       </div>
     </div>
