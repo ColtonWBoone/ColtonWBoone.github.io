@@ -14,7 +14,7 @@
       --panel: #121821;    /* panel background */
       --ink: #e7edf5;      /* primary text */
       --muted: #a8b0bd;    /* secondary text */
-      --accent: #7cbf97;   /* soft green (you've used before) */
+      --accent: #7cbf97;   /* soft green */
       --card: #0f141c;
       --border: #202936;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
@@ -34,12 +34,10 @@
     .hero-inner{display:grid; grid-template-columns:1.1fr .9fr; gap:28px}
     @media (max-width: 900px){.hero-inner{grid-template-columns:1fr}}
     .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.0)); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow)}
-    .pad{ display: flex;
-  flex-direction: column;
-  height: 100%;  padding:26px}
+    .pad{padding:26px; display:flex; flex-direction:column; height:100%}
     h2{margin:0 0 10px; font-size:40px; line-height:1.1}
     .sub{color:var(--muted); font-weight:400; margin:8px 0 22px}
-    .cta-row{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top: auto;}
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:auto}
     .btn{display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:#0b140f; padding:12px 16px; border-radius:12px; font-weight:700}
     .btn.secondary{background:#1b2431; color:var(--ink); border:1px solid var(--border)}
 
@@ -55,7 +53,10 @@
     @media (max-width: 650px){.grid{grid-template-columns:1fr}}
 
     .proj{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden}
-    .proj .thumb{height:160px; background:linear-gradient(135deg,#203046,#182131); border-bottom:1px solid var(--border)}
+    /* clean, simple thumbnail blocks */
+    .proj .thumb{height:200px; background:linear-gradient(135deg,#172233,#0f1824); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:center}
+    .proj .thumb .mark{width:104px; height:104px; border-radius:22px; background:rgba(255,255,255,0.02); border:1px solid #202936; display:grid; place-items:center; box-shadow: var(--shadow)}
+    .proj .thumb svg{display:block; width:64px; height:64px; stroke:#7cbf97; fill:none; stroke-width:3; stroke-linecap:round; stroke-linejoin:round}
     .proj h3{margin:16px 16px 6px; font-size:20px}
     .proj p{margin:0 16px 16px; color:var(--muted)}
 
@@ -64,12 +65,17 @@
     .tags{display:flex; gap:8px; flex-wrap:wrap}
     .tag{font-size:12px; border:1px solid var(--border); border-radius:999px; padding:6px 10px; color:var(--muted); background:#111827}
     .mono{font-variant-ligatures: none; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
-      /* media block for screenshots */
+
+    /* media block for screenshots */
     .media{display:grid; gap:14px}
     @media (min-width: 780px){.media{grid-template-columns:1fr}}
     figure{margin:0; background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; box-shadow:var(--shadow)}
     figure img{display:block; width:100%; height:auto}
     figcaption{padding:10px 12px; color:var(--muted); font-size:14px; border-top:1px solid var(--border); background:#0e1520}
+
+    /* code styling */
+    .code{margin:16px; padding:12px; background:#0b1220; border:1px solid var(--border); border-radius:12px; overflow:auto}
+    .code code{white-space:pre; font-variant-ligatures:none; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:13px; line-height:1.45}
   </style>
 </head>
 <body>
@@ -120,29 +126,33 @@
           Your browser does not support the video tag.
         </video>
       </div>
- <article class="proj">
+    </div>
+
+    <div class="grid">
+      <article class="proj">
         <div class="thumb" role="img" aria-label="Data Conversion Apps">
-  <div class="mark" aria-hidden="true">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <rect x="3" y="6" width="8" height="6" rx="2"/>
-      <rect x="13" y="12" width="8" height="6" rx="2"/>
-      <path d="M11 9h6m0 0l-2-2m2 2l-2 2"/>
-    </svg>
-  </div>
-</div>
+          <div class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="6" width="8" height="6" rx="2"/>
+              <rect x="13" y="12" width="8" height="6" rx="2"/>
+              <path d="M11 9h6m0 0l-2-2m2 2l-2 2"/>
+            </svg>
+          </div>
+        </div>
         <h3>One‑Click Data Conversion Apps</h3>
         <p>I create full data‑conversion applications that take raw files and clean/transform them into an intake schema. They’re built to be easy to read, easy to maintain, and run at the click of a button.</p>
       </article>
+
       <article class="proj">
         <div class="thumb" role="img" aria-label="Performance SQL">
-  <div class="mark" aria-hidden="true">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="12" cy="6" rx="6.5" ry="2.5"/>
-      <path d="M5.5 6v6c0 1.4 3 2.5 6.5 2.5s6.5-1.1 6.5-2.5V6"/>
-      <path d="M10 13l3-6m-3 6h4m-1 0l-3 5"/>
-    </svg>
-  </div>
-</div>
+          <div class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="12" cy="6" rx="6.5" ry="2.5"/>
+              <path d="M5.5 6v6c0 1.4 3 2.5 6.5 2.5s6.5-1.1 6.5-2.5V6"/>
+              <path d="M10 13l3-6m-3 6h4m-1 0l-3 5"/>
+            </svg>
+          </div>
+        </div>
         <h3>Performance‑Tuned SQL</h3>
         <p>I craft SQL that’s measurably faster—using temp tables and the right indexes where speed gains are on the table. Designed for clarity, reliability, and repeatable wins.</p>
         <pre class="code"><code>-- Stage raw → temp with narrow types
@@ -161,22 +171,22 @@ JOIN dbo.DimCustomer AS d
   ON d.CustomerId = s.CustomerId;
 </code></pre>
       </article>
+
       <article class="proj">
         <div class="thumb" role="img" aria-label="Little Helper">
-  <div class="mark" aria-hidden="true">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <rect x="5" y="5" width="14" height="14" rx="2"/>
-      <path d="M7 9h10M7 13h6"/>
-      <path d="M12 17c1.5 0 2.5-.8 3-1.8"/>
-    </svg>
-  </div>
-</div>
+          <div class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="5" width="14" height="14" rx="2"/>
+              <path d="M7 9h10M7 13h6"/>
+              <path d="M12 17c1.5 0 2.5-.8 3-1.8"/>
+            </svg>
+          </div>
+        </div>
         <h3>Little Helper: CSV → Insight</h3>
         <p>A tiny desktop utility I’ve been tinkering on: drag‑and‑drop a CSV to auto‑detect schema, flag anomalies, preview charts, and export clean, DB‑ready files. Small footprint, big time‑saver.</p>
       </article>
     </div>
   </section>
-
 
   <section id="experience" style="margin-top:28px">
     <h2 style="font-size:28px; margin:0 0 14px">Experience</h2>
